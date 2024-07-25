@@ -48,7 +48,7 @@ function showDiscountPopup() {
     confirmButton.textContent = '확인';
     confirmButton.addEventListener('click', function() {
         const discountCode = input.value.trim();
-        if (discountCode === '1234') {
+        if (discountCode === '1978') {
             const link = document.querySelector('.glassmorphism').getAttribute('data-link');
             window.open(link, 'popupWindow', 'width=800,height=600,noopener,noreferrer');
             popup.remove();
