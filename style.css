@@ -72,8 +72,8 @@ body, html {
         flex-direction: column;
     }
     .btn {
-        width: 40vw;
-        height: 40vw;
+        width: 60vw;
+        height: 60vw;
         max-width: 400px;
         max-height: 400px;
         margin: 5vw 0;
