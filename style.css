@@ -1,0 +1,160 @@
+﻿:root {
+    --bg-color: #e0e0e0;
+    --btn-bg-1: #6AD972;  /* 연한 핑크 */
+    --btn-bg-2: #7FC7DC;  /* 연한 하늘색 */
+    --btn-color: #333;
+    --shadow-light: rgba(255, 255, 255, 0.5);
+    --shadow-dark: rgba(163, 177, 198, 0.5);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn.neumorphism {
+    background: var(--btn-bg-1);
+}
+
+.btn.glassmorphism {
+    background: var(--btn-bg-2);
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 40vw;  /* 뷰포트 너비의 30%로 증가 */
+    height: 40vw;  /* 뷰포트 너비의 30%로 증가 */
+    max-width: 400px;  /* 최대 크기 증가 */
+    max-height: 400px;  /* 최대 크기 증가 */
+    border: none;
+    border-radius: 50%;
+    font-size: 3vw;  /* 글자 크기 증가 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(224, 224, 224, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0.7vw 0.7vw 1.4vw rgba(163, 177, 198, 0.5),
+        -0.7vw -0.7vw 1.4vw rgba(255, 255, 255, 0.5),
+        inset 0.4vw 0.4vw 0.8vw rgba(163, 177, 198, 0.2),
+        inset -0.4vw -0.4vw 0.8vw rgba(255, 255, 255, 0.2);
+    border: 0.15vw solid rgba(255, 255, 255, 0.2);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        0.3vw 0.3vw 0.7vw rgba(163, 177, 198, 0.5),
+        -0.3vw -0.3vw 0.7vw rgba(255, 255, 255, 0.5),
+        inset 0.7vw 0.7vw 1.4vw rgba(163, 177, 198, 0.2),
+        inset -0.7vw -0.7vw 1.4vw rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .btn {
+        width: 40vw;
+        height: 40vw;
+        max-width: 150px;
+        max-height: 150px;
+        margin: 5vw 0;
+        font-size: 4vw;
+    }
+}
+
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    width: 50%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    text-align: center;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #DB2B3C;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.popup .close-btn:hover {
+    color: #ccc;
+    background-color: #A70D00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup input {
+    width: 80%;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.popup button {
+    width: 50%;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: var(--btn-bg-1);
+    color: var(--btn-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .popup {
+        width: 80%;
+    }
+
+    .popup input {
+        width: 60%;
+    }
+
+    .popup button {
+        width: 40%;
+    }
+}
