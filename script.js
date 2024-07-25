@@ -37,6 +37,12 @@ function showDiscountPopup() {
         enableButtons();
     });
 
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+    const image = document.createElement('img');
+    image.src = '할인권.png'; // 이미지 경로 설정
+    imageContainer.appendChild(image);
+
     const message = document.createElement('p');
     message.textContent = '할인 코드를 4자리 입력해주세요.';
 
@@ -58,6 +64,7 @@ function showDiscountPopup() {
     });
 
     popup.appendChild(closeBtn);
+    popup.appendChild(imageContainer);
     popup.appendChild(message);
     popup.appendChild(input);
     popup.appendChild(confirmButton);
