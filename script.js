@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.btn');
 
     buttons.forEach(button => {
@@ -56,7 +56,10 @@ function showDiscountPopup() {
         const discountCode = input.value.trim();
         if (discountCode === '1978') {
             const link = document.querySelector('.glassmorphism').getAttribute('data-link');
-            window.open(link, 'popupWindow', 'width=800,height=600,noopener,noreferrer');
+            const discountWindow = window.open(link, 'popupWindow', 'width=800,height=600,noopener,noreferrer');
+            discountWindow.addEventListener('beforeunload', function() {
+                enableButtons();
+            });
             popup.remove();
         } else {
             alert('할인 코드가 일치하지 않습니다.');
@@ -85,3 +88,4 @@ function enableButtons() {
         button.classList.remove('disabled');
     });
 }
+
