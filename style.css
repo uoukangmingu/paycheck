@@ -146,7 +146,7 @@ body, html {
 }
 
 @media (max-width: 768px) {
-    .popup .image-container img{
+    .popup {
         width: 80%;
         font-size: 10px;
     }
@@ -157,5 +157,8 @@ body, html {
 
     .popup button {
         width: 40%;
+    }
+    .image-container img {
+        width: 90%;
     }
 }
